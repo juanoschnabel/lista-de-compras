@@ -1,7 +1,13 @@
 import { Router } from "express";
+import { sessionsService } from "../services/sessions.services.js";
 const sessionRouter = Router();
 sessionRouter.get("/", (req, res) => {
-  //   res.send("prueba de la session router");
-  res.render("home");
+  sessionsService.home(req, res);
+});
+sessionRouter.post("/", (req, res) => {
+  sessionsService.login(req, res);
+});
+sessionRouter.post("/", (req, res) => {
+  sessionsService.logout(req, res);
 });
 export default sessionRouter;
