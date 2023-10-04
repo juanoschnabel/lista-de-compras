@@ -5,16 +5,20 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <form action="">
+    <form action="/sessions" method="post">
       <div>
-        <label for="Nombre"> Nombre de Usuario</label>
-        <input type="text" id="Nombre" name="nombre" />
+        <label for="email"> Email registrado</label>
+        <input type="email" id="email" name="email" />
       </div>
       <div>
-        <label for="Password"> Contraseña</label>
-        <input type="password" id="Password" name="password" />
+        <label for="password"> Contraseña</label>
+        <input type="password" id="password" name="password" />
       </div>
       <button type="submit">Ingresar</button>
     </form>
+    <button
+      onclick="location.href='/users/signIn'"
+      class="btn btn-primary"
+    >CREAR USUARIO</button>
   </body>
 </html>
