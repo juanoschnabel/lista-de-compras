@@ -22,13 +22,14 @@ class SessionsServices {
     }
   }
 
-  async logout(req, res) {}
+  async logout(req, res) {
+    req.session.destroy((err) => {
+      if (err)
+        res.status(500).render("errors/errorLogout", {
+          error: err,
+        });
+      else res.redirect("/sessions/login");
+    });
+  }
 }
 export const sessionsService = new SessionsServices();
-// userModel.create({
-//   first_name: "juan",
-//   last_name: "perez",
-//   email: "juan@juan.com",
-//   age: 31,
-//   password: "1234",
-// });

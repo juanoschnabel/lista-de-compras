@@ -7,7 +7,7 @@ sessionRouter.get("/", (req, res) => {
 sessionRouter.post("/", (req, res) => {
   sessionsService.login(req, res);
 });
-sessionRouter.post("/", (req, res) => {
+sessionRouter.get("/logout", (req, res) => {
   sessionsService.logout(req, res);
 });
 export default sessionRouter;
